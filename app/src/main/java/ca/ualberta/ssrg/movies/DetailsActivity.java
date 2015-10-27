@@ -18,11 +18,16 @@ public class DetailsActivity extends Activity {
 			TextView director = (TextView) findViewById(R.id.detailsDirector);
 			TextView year = (TextView) findViewById(R.id.detailsYear);
 			TextView genre = (TextView) findViewById(R.id.detailsGenre);
-			
-			title.setText(movie.getTitle());
-			director.setText(movie.getDirector());
+			if (movie.getTitle()!= null) {
+				title.setText(movie.getTitle());
+			}
+			if (movie.getDirector()!= null) {
+				director.setText(movie.getDirector());
+			}
 			year.setText(String.valueOf(movie.getYear()));
-			genre.setText(movie.getGenres().toString());
+			if (movie.getGenres()!= null) {
+				genre.setText(movie.getGenres().toString());
+			}
 		}
 	};
 
